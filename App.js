@@ -4,6 +4,7 @@ import React from "react";
 import { LoadingView } from "./src/LoadingView";
 import { ModelView } from "./src/ModelView";
 import { useTensorFlowLoaded } from "./src/useTensorFlow";
+import PickModelView from "./src/PickModelView";
 
 export default function App() {
   const isLoaded = useTensorFlowLoaded();
@@ -26,5 +27,6 @@ export default function App() {
     return <LoadingView>Loading TensorFlow</LoadingView>;
   }
 
-  return <ModelView />;
+  // return <ModelView />;
+  return <PickModelView/>
 }

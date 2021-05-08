@@ -16,14 +16,14 @@ export const Home = ({ navigation }) => {
                 <Button
                     color="white"
                     title="Foto"
-                    onPress={() => console.log("oi")}
+                    onPress={() => navigation.navigate("ModelPhoto")}
                 />
             </View>
             <View style={{ backgroundColor: '#800000', width: '90%', alignSelf: 'center', marginTop: 40, borderRadius: 4 }}>
                 <Button
                     color="white"
                     title="Câmera"
-                    onPress={() => console.log("oi")}
+                    onPress={() => navigation.navigate("ModelCam")}
                 />
             </View>
         </View>

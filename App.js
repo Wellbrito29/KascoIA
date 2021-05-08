@@ -28,7 +28,7 @@ export default function App() {
     return <LoadingView>Camera permission is required to continue</LoadingView>;
   }
   if (!isLoaded) {
-    return <LoadingView>Loading TensorFlow</LoadingView>;
+    return <LoadingView>Carregando o useTensorFlow</LoadingView>;
   }
 
   return (

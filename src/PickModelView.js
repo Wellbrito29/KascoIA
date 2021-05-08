@@ -92,9 +92,11 @@ class PickModelView extends React.Component {
   }
 
   renderPrediction = prediction => {
+      const aux = prediction.className.split(",")
+      console.log(aux)
     return (
       <Text key={prediction.className} style={styles.text}>
-        {prediction.className}
+       Elemento: {aux[0]} Probabilidade: {(prediction.probability*100).toFixed(2)}%
       </Text>
     )
   }
@@ -107,11 +109,11 @@ class PickModelView extends React.Component {
         <StatusBar barStyle='light-content' />
         <View style={styles.loadingContainer}>
           <Text style={styles.text}>
-            TFJS ready? {isTfReady ? <Text>✅</Text> : ''}
+          Motor preparado? {isTfReady ? <Text>✅</Text> : ''}
           </Text>
 
           <View style={styles.loadingModelContainer}>
-            <Text style={styles.text}>Model ready? </Text>
+            <Text style={styles.text}>Modelo pronto? </Text>
             {isModelReady ? (
               <Text style={styles.text}>✅</Text>
             ) : (
@@ -125,13 +127,13 @@ class PickModelView extends React.Component {
           {image && <Image source={image} style={styles.imageContainer} />}
 
           {isModelReady && !image && (
-            <Text style={styles.transparentText}>Tap to choose image</Text>
+            <Text style={styles.transparentText}>Pressione para escolher a foto</Text>
           )}
         </TouchableOpacity>
         <View style={styles.predictionWrapper}>
           {isModelReady && image && (
             <Text style={styles.text}>
-              Predictions: {predictions ? '' : 'Predicting...'}
+              Predições: {predictions ? '' : 'Analisando...'}
             </Text>
           )}
           {isModelReady &&
